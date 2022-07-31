@@ -4,9 +4,10 @@ const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 module.exports = {
     entry: "./src/index.tsx",
+    mode: "production",
     output: {
         path: path.resolve(__dirname, 'build'),
-        filename: 'my-first-webpack.bundle.js'
+        filename: 'testConfig.js'
     },
     resolve: {
         alias: {
@@ -17,8 +18,10 @@ module.exports = {
         // extensions: ['ts', 'tsx', 'js', 'jsx', 'json']
         extensions: ['.js', '.jsx', '.ts', '.tsx', 'json']
     },
-
-
+    performance: {
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
     module: {
         rules: [
             {
