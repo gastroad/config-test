@@ -11,12 +11,12 @@ module.exports = {
     },
     resolve: {
         alias: {
-            "@src": path.resolve("./src"),
-            "@components": path.resolve("./src/components"),
-            "@utils": path.resolve("./src/utils")
+            src: path.resolve(__dirname, 'src/'),
+            components: path.resolve(__dirname, 'src/components/'),
+            page: path.resolve(__dirname, 'src/page/'),
+            utils: path.resolve(__dirname, 'src/utils/'),
         },
-        // extensions: ['ts', 'tsx', 'js', 'jsx', 'json']
-        extensions: ['.js', '.jsx', '.ts', '.tsx', 'json']
+        extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
     },
     performance: {
         maxEntrypointSize: 512000,
@@ -54,6 +54,7 @@ module.exports = {
         port: 443,
         compress: true,
         https: true,
+        historyApiFallback: true,
     },
     plugins: [
         new CaseSensitivePathsPlugin(),
